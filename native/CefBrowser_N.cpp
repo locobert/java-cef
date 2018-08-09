@@ -1267,7 +1267,7 @@ Java_org_cef_browser_CefBrowser_1N_N_1SetFocus(JNIEnv* env,
   }
 
 #if defined(OS_WIN)
-  if (enable == JNI_FALSE) {
+  if (enable != JNI_FALSE) {
     HWND browserHandle = browser->GetHost()->GetWindowHandle();
     if (CefCurrentlyOn(TID_UI))
       FocusParent(browserHandle);
